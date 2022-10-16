@@ -1,0 +1,34 @@
+section{
+    margin: 100px 100px 0px 100px;
+}
+.slider{
+    display: flex;
+    justify-content: space-between;
+}
+.left-arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background-color: orange;
+    cursor: pointer;
+
+}
+.fa-arrow-left{
+    color: white;
+}
+.right-arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background-color: orange;
+    cursor: pointer;
+}
+.fa-arrow-right{
+    color: white;
+}
