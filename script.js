@@ -29,7 +29,9 @@ let collection = [
 let leftArrow = document.getElementById('leftArrow');
 let rightArrow = document.getElementById('rightArrow');
 let sliderContent = document.getElementById('sliderContent');
+let dotsElement = document.getElementsByClassName('dot');
 let indexSlider = 0;
+
 
 function createDivTag(item){
 let divTag = document.createElement('div');
@@ -61,7 +63,14 @@ function createDots(){
     collection.forEach(element => {
         let childDot = document.createElement('div');
         childDot.classList.add('dot');
+        childDot.setAttribute('data-id', element.id - 1);
         dots.appendChild(childDot);
+
+        childDot.addEventListener('click', function(event) {
+            let id = event.target.getAttribute('data-id');
+            indexSlider = id;
+            setSlide();
+        })
     })
     return dots;
 }
@@ -77,6 +86,12 @@ function setSlide(){
     slideItem.appendChild(headerTag);
     sliderContent.appendChild(slideItem);
     sliderContent.appendChild(dots);
+
+    currentActiveDot();
+}
+
+function currentActiveDot() {
+    dotsElement[indexSlider].classList.add('activeDot');
 }
 
 function leftArrowClick() {
@@ -85,11 +100,9 @@ function leftArrowClick() {
         setSlide();
         return;
     }
-    indexSlider =-1;
+    indexSlider -=1;
     setSlide();
 }
-
-leftArrow.addEventListener('click', leftArrowClick);
 
 function rightArrowClick() {
     if (indexSlider == collection.length - 1){
@@ -97,14 +110,16 @@ function rightArrowClick() {
         setSlide();
         return;
     }
-    indexSlider =+1;
+    indexSlider +=1;
     setSlide();
 }
 
+leftArrow.addEventListener('click', leftArrowClick);
 rightArrow.addEventListener('click', rightArrowClick);
 
 setInterval(() => {
     rightArrowClick();
-}, 2000);
+}, 5000);
 
 setSlide();
+

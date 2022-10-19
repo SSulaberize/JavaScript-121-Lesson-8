@@ -15,9 +15,9 @@ section {
   height: 30px;
   width: 30px;
   border-radius: 50px;
-  background-color: orange;
+  background-color: orangered;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 .fa-arrow-left {
   color: white;
@@ -33,9 +33,9 @@ section {
   height: 30px;
   width: 30px;
   border-radius: 50px;
-  background-color: orange;
+  background-color: orangered;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 .fa-arrow-right {
   color: white;
@@ -58,4 +58,8 @@ section {
     border-radius: 50%;
     background-color: white;
     margin: 15px;
+    opacity: 0.3;
+}
+.dot.activeDot{
+  background-color: orangered;
 }
